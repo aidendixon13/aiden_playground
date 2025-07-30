@@ -3,6 +3,7 @@ import random
 import time
 
 import httpx
+from huggingface_hub import User
 
 from wernicke.agents.rubix.cube_view.cube_view_orchestrator.cube_view_orchestrator import CubeViewOrchestrator
 from wernicke.agents.rubix.cube_view.cube_view_orchestrator.state import CubeViewOrchestratorState
@@ -18,7 +19,9 @@ from wernicke.engines.llm.llm_orchestrators.graph_llm_orchestrators.models impor
 from wernicke.engines.llm.models import ResponseType
 from wernicke.engines.processing.onestream_metadata.dim_member_groupings.adapters.uow.cosmos import DimMemberGroupingCosmosUnitOfWork
 from wernicke.engines.processing.settings.adapters.uow.company_settings.cosmos import CompanySettingsCosmosUnitOfWork
+from wernicke.engines.processing.settings.adapters.uow.persona_settings.cosmos import PersonaSettingsCosmosUnitOfWork
 from wernicke.engines.processing.settings.adapters.uow.ud_types_setting.cosmos import UDSettingsCosmosUnitOfWork
+from wernicke.engines.processing.settings.adapters.uow.user_settings.cosmos import UserSettingsCosmosUnitOfWork
 from wernicke.engines.retrieval.index_management.models import IndexService
 from wernicke.internals.session.user_session import UserSessionInfo
 from wernicke.managers.cosmos_database.azure_cosmos_manager import CosmosDatabaseManager
@@ -70,6 +73,8 @@ async def execute_orchestrator():
             index_service=IndexService.AZURE_COGNITIVE_SEARCH,
             error_handling_active=True,
             dim_member_grouping_uow=DimMemberGroupingCosmosUnitOfWork(user_session_info=user_session_info),
+            user_settings_uow=UserSettingsCosmosUnitOfWork(user_session_info=user_session_info),
+            personas_uow=PersonaSettingsCosmosUnitOfWork(user_session_info=user_session_info),
             company_settings_uow=CompanySettingsCosmosUnitOfWork(user_session_info=user_session_info),
             ud_types_settings_uow=ud_settings_uow,
             async_http_client=httpx.AsyncClient(),
@@ -83,25 +88,6 @@ async def execute_orchestrator():
                 ud_types=ud_types,
                 time_scope=TimeScope.SYSTEM_TIME,
             )
-
-            # hil_response_1 = HilResponseModel(
-            #     hil_node_name=DistributionHilNode.name,
-            #     input_format=HilInputFormat.SINGLE_SELECT,
-            #     response_value='(\'eaab6f58-dd99-9dd3-0389-18e032c75e66\', \'{"name":"PRDTop","description":"Product Top","category":"product","expansion_function":".ChildrenInclusive","original_item":"product","dim_type":"UD3"}\')',
-            # )
-
-            # hil_response_2 = HilResponseModel(
-            #     hil_node_name=ValidateCubeHilNode.name,
-            #     input_format=HilInputFormat.SINGLE_SELECT,
-            #     response_value='',
-            # )
-
-            # hil_response_3 = HilResponseModel(
-            #     hil_node_name=DistributionHilNode.name,
-            #     input_format=HilInputFormat.SINGLE_SELECT,
-            #     response_value='{"name":"CC102","description":"Marketing","category":"cost_center","expansion_function":"","original_item":"purchasing '
-            #                    'cost center","dim_type":"UD1"}',
-            # )
 
             graph_inputs = GraphInputModel(
                 graph_state=graph_state,
