@@ -1,0 +1,41 @@
+{
+  "graph_state": {
+    "errors": [],
+    "user_input": "For March 2025 show me the variance in my revenue accounts between actuals and budget for my strategic customers.",
+    "ud_types": {
+      "Cost Center": "5b8c0643-c22c-fbc4-0730-29a0330b7bb0",
+      "Region": "83e97154-6ceb-0ae9-0730-0fa0330b7bb0",
+      "Product": "4948a918-2bf0-dc2e-0730-d5e0330b7bb0",
+      "Customer": "ab802a6f-5083-9f1a-0730-fec0330b7bb0",
+      "Project": "88cface0-9783-a561-0730-fb40330b7bb0",
+      "Vendor": "3dc276dd-2782-2882-0730-5ac0330b7bb0",
+      "Business Unit": "adfc0a33-fca2-3d7d-0730-d280330b7bb0",
+      "Department": "9e77bf37-a055-ea92-0730-c6a0330b7bb0",
+      "Not Used": "e83d68d0-7962-5358-0730-de60330b7bb0"
+    },
+    "cube_name": "Equipment Division",
+    "persona_id": null,
+    "smart_cube_identification_setting": "SmartCubeIdentificationSettings.OFF",
+    "time_scope": "TimeScope.SYSTEM_TIME",
+    "final_outputs": []
+  },
+  "orchestrator_config": {
+    "index_service": "AZURE_COGNITIVE_SEARCH",
+    "error_handling_active": true,
+    "max_iterations": 5,
+    "force_response": true
+  },
+  "question": "For March 2025 show me the variance in my revenue accounts between actuals and budget for my strategic customers.",
+  "cube_selection_instructions": "\n        If you are asked to select a cube, select the `Equipment Division` cube. If you are asked to select a dimension, select the `Revenue` dimension.\n        If you are asked for a budget version, select the `BudgetFinal` version.\n        If you are asked for a scenario, select the `Actual` scenario.\n        If you are asked for a revenue view, select the `40000 (Tree)` view.\n        If you are asked about cost centers, select the `CST1100` with our without a (Tree).\n        ",
+  "ud_types": {
+    "Cost Center": "5b8c0643-c22c-fbc4-0730-29a0330b7bb0",
+    "Region": "83e97154-6ceb-0ae9-0730-0fa0330b7bb0",
+    "Product": "4948a918-2bf0-dc2e-0730-d5e0330b7bb0",
+    "Customer": "ab802a6f-5083-9f1a-0730-fec0330b7bb0",
+    "Project": "88cface0-9783-a561-0730-fb40330b7bb0",
+    "Vendor": "3dc276dd-2782-2882-0730-5ac0330b7bb0",
+    "Business Unit": "adfc0a33-fca2-3d7d-0730-d280330b7bb0",
+    "Department": "9e77bf37-a055-ea92-0730-c6a0330b7bb0",
+    "Not Used": "e83d68d0-7962-5358-0730-de60330b7bb0"
+  }
+}
