@@ -71,11 +71,12 @@ def entry_exists(existing_data: list, dim_member: str, expansion: str) -> bool:
 async def main():
     # Also create mock service to check if data already exists in JSON
 
-    jwt = "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijk2MkNEN0ZEMzRDQzQ0ODBFNjA0NDNBNkY0NUEwNjVDIiwieDV0IjoiRTBJSkFhdlFTZWpEbDg2ZVo1T2ZQSmFSMW9JIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo0NDM4NyIsIm5iZiI6MTc1NTAzMjI4NCwiaWF0IjoxNzU1MDMyMjg0LCJleHAiOjE3NTUwMzU4ODQsImF1ZCI6ImFwaTovL3dlcm5pY2tlIiwic2NvcGUiOlsib3BlbmlkIiwiZW1haWwiLCJwcm9maWxlIiwiZ3JvdXBzIiwiYXBpOi8vd2Vybmlja2Uvd2Vybmlja2UuYWxsIiwib2ZmbGluZV9hY2Nlc3MiXSwiYW1yIjpbInB3ZCJdLCJjbGllbnRfaWQiOiJzZW5zaWJsZWdlbmFpLnBob2VuaXgiLCJzdWIiOiI2ZjM3M2RlNC1jOWJmLTRlYzMtOGI2Ny01YzExZjIwYjViNWUiLCJhdXRoX3RpbWUiOjE3NTUwMzIyODQsImlkcCI6ImxvY2FsIiwiZ3JvdXAiOlsiQWRtaW5pc3RyYXRvcnMiLCJFdmVyeW9uZSJdLCJleHRfaWF0IjpbIjE3NTUwMzIyODQiLCIxNzU1MDMyMjg0Il0sInByZWZlcnJlZF91c2VybmFtZV9vaXMiOiJBZG1pbmlzdHJhdG9yIiwic2NoZW1lX29pcyI6InhmbmF0aXZlIiwic2lkIjoiNDUwM0I1MzJENkVDMTY4OTgxNTgyRUZEMTMyRjA1NkQiLCJqdGkiOiJCODJCNDY2MDAyRUQxQjNCOEI0OTBBQUQ5ODJGMzg2QyJ9.GJaFiaiE-0395Z2k9Ai6nEqMfaHNcAmvWSJKH8A-COJJtXNvD162N7RsmrFzYD8ePIlJvfpLwLJgwReHqvIqRmYIvYi0J6s2Pdui-SCByG1PFog3tY2M8jZmFQkyu73V85QCwpjZTMoyjj3Sjr3tpvsQk2grLykwyDH--7WRIdHiytqWPqRYdEbzuBo0Dx03Uj-b0GNU1O0oh1eIo9iE8P0_tawVfAVjF_-2n4Uo_ndY47kE4jhxr9QbSI9_SF1QuTVrzZMsxiAtNHAmixBrGFvjjgHYgLb1w76JR4DVCvl4HNnERBDh9guvZquttFh6LrMfCf7VbYesnxJ54UvAVw"
+    jwt = "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijk2MkNEN0ZEMzRDQzQ0ODBFNjA0NDNBNkY0NUEwNjVDIiwieDV0IjoiRTBJSkFhdlFTZWpEbDg2ZVo1T2ZQSmFSMW9JIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo0NDM4NyIsIm5iZiI6MTc1NTExNDgxOSwiaWF0IjoxNzU1MTE0ODE5LCJleHAiOjE3NTUxMTg0MTksImF1ZCI6ImFwaTovL3dlcm5pY2tlIiwic2NvcGUiOlsib3BlbmlkIiwiZW1haWwiLCJwcm9maWxlIiwiZ3JvdXBzIiwiYXBpOi8vd2Vybmlja2Uvd2Vybmlja2UuYWxsIiwib2ZmbGluZV9hY2Nlc3MiXSwiYW1yIjpbInB3ZCJdLCJjbGllbnRfaWQiOiJzZW5zaWJsZWdlbmFpLnBob2VuaXgiLCJzdWIiOiI2ZjM3M2RlNC1jOWJmLTRlYzMtOGI2Ny01YzExZjIwYjViNWUiLCJhdXRoX3RpbWUiOjE3NTUxMTA2NzAsImlkcCI6ImxvY2FsIiwiZ3JvdXAiOlsiQWRtaW5pc3RyYXRvcnMiLCJFdmVyeW9uZSJdLCJleHRfaWF0IjpbIjE3NTUxMTQ4MTkiLCIxNzU1MTE0ODE5Il0sInByZWZlcnJlZF91c2VybmFtZV9vaXMiOiJBZG1pbmlzdHJhdG9yIiwic2NoZW1lX29pcyI6InhmbmF0aXZlIiwic2lkIjoiNEFFNjlGRThBNjM0RTEzMEREOUQ3Q0QzRTVFODM3OTQiLCJqdGkiOiJGREMwRUFDRkNDRUZFNEM2NDg4REU3Q0VCRjcwNzc4RiJ9.0bE011r6kEjGA8HXu2XI-23Ba8R5QH9KusTeTRgMWjzFFhNyZKBBmSKHd_lQ55FMSVcYUJzjHlmjy3pDscCYNIN23sHpZLc47x6dMcdNYcQcEBypbg7WPnfjuhm4xEdtqEGuzzC67oKCevgoXpM0VvHqKKujRkwRI8oatl57TkOMl4hC3cNjJ1GBC-pF1N3tn9UiDrFOoT-GB_zUfqK3TAZDPAfSs4uhn8cxcQo7ZlanOIr6aR6Q0i72Kge48Qcfqk_AXns4JXBBE10oABuuEVcRg8fbHNDNZ81tUzwNnpnR4ccKXMDA2kQ1WyjpxTRGBF08r6F8uYbB50od6GOQFA"
 
     user_session_info = await AuthManager.create_session_from_jwt_token(jwt_token=jwt)
 
-    expansions = [".Base", ".Tree", ".ChildrenInclusive", ".Children", ".TreeDescendantsR"]
+    expansions = [".Base", ".Tree", ".ChildrenInclusive", ".Children"]
+    # expansions.append(".TreeDescendantsR")
 
     with CosmosDatabaseManager(user_session_info=user_session_info) as database_connection:
         user_session_info.database_connection = database_connection
@@ -104,8 +105,17 @@ async def main():
         }
 
         # Define the dimension member you want to get expansion counts for
-        dimension_member = "U4#CST1100"  # Just specify the dimension member without expansion
-        dim_type = prefix_to_dim_type[dimension_member[:3]]
+        dimension_member = "U3#PRD120"  # Just specify the dimension member without expansion
+
+        # Find the matching prefix (handle variable length prefixes)
+        dim_type = None
+        for prefix, dtype in prefix_to_dim_type.items():
+            if dimension_member.startswith(prefix):
+                dim_type = dtype
+                break
+
+        if dim_type is None:
+            raise ValueError(f"No matching dimension type found for dimension member: {dimension_member}")
 
         # Extract the part after # using the helper function (but modify for this use case)
         extracted_name = dimension_member.split("#")[1] if "#" in dimension_member else dimension_member

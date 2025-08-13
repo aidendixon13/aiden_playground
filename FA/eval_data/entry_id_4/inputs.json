@@ -1,7 +1,7 @@
 {
   "graph_state": {
     "errors": [],
-    "user_input": "For March 2025 show me the variance in my revenue accounts between actuals and budget for my strategic customers.",
+    "user_input": "Show me a comparison of my expenses for actuals versus forecast.",
     "ud_types": {
       "Cost Center": "5b8c0643-c22c-fbc4-0730-29a0330b7bb0",
       "Region": "83e97154-6ceb-0ae9-0730-0fa0330b7bb0",
@@ -13,10 +13,10 @@
       "Department": "9e77bf37-a055-ea92-0730-c6a0330b7bb0",
       "Not Used": "e83d68d0-7962-5358-0730-de60330b7bb0"
     },
-    "cube_name": "Equipment Division",
+    "cube_name": null,
     "persona_id": null,
     "smart_cube_identification_setting": "SmartCubeIdentificationSettings.OFF",
-    "time_scope": "TimeScope.SYSTEM_TIME",
+    "time_scope": "TimeScope.NONE",
     "final_outputs": []
   },
   "orchestrator_config": {
@@ -25,8 +25,8 @@
     "max_iterations": 5,
     "force_response": true
   },
-  "question": "For March 2025 show me the variance in my revenue accounts between actuals and budget for my strategic customers.",
-  "eval_notes": "\n    If you are asked to select a cube, select the `Equipment Division` cube. If you are asked to select a dimension, select the `Revenue` dimension.\n    If you are asked for a budget version, select the `BudgetFinal` version.\n    If you are asked for a scenario, select the `Actual` scenario.\n    If you are asked for a revenue view, select the `40000 (Tree)` view.\n    If you are asked about cost centers, select the `CST1100` with our without a (Tree).\n    ",
+  "question": "Show me a comparison of my expenses for actuals versus forecast.",
+  "eval_notes": "\n    If you are asked to select a cube, select the `Equipment Division` cube. \n    If you are asked about time please select `March 2025`.\n    If you are asked about which forecast scenario, select: OperationalForecast: Operational Forecast\n    If you are asked about what level of detail for expenses, select `69999 Total Operating Expenses (Tree)` \n    ",
   "ud_types": {
     "Cost Center": "5b8c0643-c22c-fbc4-0730-29a0330b7bb0",
     "Region": "83e97154-6ceb-0ae9-0730-0fa0330b7bb0",
