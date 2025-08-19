@@ -1,0 +1,95 @@
+[
+  {
+    "artifact_data": {
+      "id": "bb0b8b6f-e92d-adeb-02eb-98803317d4e2",
+      "user_id": "5b98dfee-7a2d-4093-94a0-9669cac5b0cb",
+      "artifact_type": "cube_view",
+      "artifact_data": {
+        "rows": [
+          {
+            "primary_dimension": "Account",
+            "row_column": [
+              "A#63000"
+            ]
+          }
+        ],
+        "columns": [
+          {
+            "primary_dimension": "Time",
+            "row_column": [
+              "T#2024M10",
+              "T#2024M11",
+              "T#2024M12"
+            ]
+          }
+        ],
+        "pov": {
+          "cube_name": "Equipment Division",
+          "entity": "GSE",
+          "parent": "",
+          "consolidation": "Local",
+          "scenario": "Actual Scenarios",
+          "time": "2025M8",
+          "view": "Periodic",
+          "account": "AcctTop",
+          "flow": "FLWTop",
+          "origin": "Top",
+          "ic": "Top",
+          "ud1": "CCTop",
+          "ud2": "NA",
+          "ud3": "PRDTop",
+          "ud4": "CSTTop",
+          "ud5": "UD5Top",
+          "ud6": "UD6Top",
+          "ud7": "UD7Top",
+          "ud8": "RPTTop"
+        },
+        "valid_dims": {
+          "overridden_dimensions": [
+            "account",
+            "time"
+          ],
+          "scenario_types": [
+            "Actual"
+          ],
+          "Entity": [
+            "Equipment"
+          ],
+          "Account": [
+            "Equipment Accounts Actuals"
+          ],
+          "Scenario": [
+            "Scenarios"
+          ],
+          "Flow": [
+            "Detail Flows"
+          ],
+          "UD1": [
+            "Equipment Cost Centers"
+          ],
+          "UD2": [
+            "StateProvince"
+          ],
+          "UD3": [
+            "Equipment Products"
+          ],
+          "UD4": [
+            "Equipment Customer Detail"
+          ],
+          "UD5": [
+            "MainUD5"
+          ],
+          "UD6": [
+            "MainUD6"
+          ],
+          "UD7": [
+            "Detail Data Type"
+          ],
+          "UD8": [
+            "ReportingMetrics"
+          ]
+        }
+      }
+    }
+  }
+]

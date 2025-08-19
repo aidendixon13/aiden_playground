@@ -34,6 +34,7 @@ from wernicke.engines.llm.llm_orchestrators.graph_llm_orchestrators.graph_checkp
     AzureTableStorageCheckpointer,
 )
 from wernicke.engines.llm.llm_orchestrators.graph_llm_orchestrators.models import (
+    BaseGraphState,
     GraphInputModel,
     GraphOutputModel,
     HilResponseModel,
@@ -80,15 +81,13 @@ class InputModel(BaseModel):
 
 
 # Set the current index for directory naming
-CURRENT_INDEX = 6
+CURRENT_INDEX = 12
 
 # Single question with eval notes
 question = InputModel(
-    question="Show me how our gross margin for each GolfStream Epic sku has trended over the last 6 months?",
+    question="Show total marketing spend in North America from October to December 2024.",
     eval_notes="""
-    If you are asked if 'Golfstream' corresponds to the cube: Global GolfStream, select: No.
-    If you are asked to select a cube, select the `Equipment Division` cube. 
-    If you are asked about Which Gross Margin metric would you like to use, select: one with 59999.
+    If you are asked to select a cube, select the `Equipment Division` cube.
     """,
 )
 
@@ -192,10 +191,11 @@ async def execute_orchestrator():
             start = time.time()
             try:
                 orchestrator_emulator_input_model = OrchestratorEmulatorInputModel(
-                    orchestrator=orchestrator,
-                    inputs=graph_inputs,
+                    obj=orchestrator,
+                    graph_inputs=graph_inputs,
+                    entry_inputs={},
                     thread_id=str(thread_id),
-                    user_notes=question.eval_notes,
+                    eval_notes=question.eval_notes,
                 )
 
                 orchestrator_emulator = OrchestratorEmulator(
@@ -217,8 +217,10 @@ async def execute_orchestrator():
                 artifact_id = None
                 artifact = None
 
-                if hasattr(results.graph_state, "final_outputs") and results.graph_state.final_outputs:
-                    for output in results.graph_state.final_outputs:
+                graph_outputs: BaseGraphState = results.outputs[0].graph_state
+
+                if hasattr(graph_outputs, "final_outputs") and graph_outputs.final_outputs:
+                    for output in graph_outputs.final_outputs:
                         # Check if this output is a CubeViewArtifact object (has id attribute and artifact_type)
                         if hasattr(output, "id") and hasattr(output, "artifact_type"):
                             artifact_id = output.id

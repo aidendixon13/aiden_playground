@@ -1,15 +1,15 @@
 [
   {
     "artifact_data": {
-      "id": "1ecd5fc8-0e20-afbd-0534-a8a03317bfe9",
+      "id": "9810f0df-4122-540b-0377-3a603317c9a0",
       "user_id": "5b98dfee-7a2d-4093-94a0-9669cac5b0cb",
       "artifact_type": "cube_view",
       "artifact_data": {
         "rows": [
           {
-            "primary_dimension": "UD3",
+            "primary_dimension": "Account",
             "row_column": [
-              "U3#PRD120.Base"
+              "A#63000"
             ]
           }
         ],
@@ -17,19 +17,30 @@
           {
             "primary_dimension": "Time",
             "row_column": [
-              "T#2025M8.Prior6"
+              "T#2024M8",
+              "T#2024M9",
+              "T#2024M10",
+              "T#2024M11",
+              "T#2024M12",
+              "T#2025M1",
+              "T#2025M2",
+              "T#2025M3",
+              "T#2025M4",
+              "T#2025M5",
+              "T#2025M6",
+              "T#2025M7"
             ]
           }
         ],
         "pov": {
           "cube_name": "Equipment Division",
-          "entity": "GSE",
+          "entity": "EUS01",
           "parent": "",
           "consolidation": "Local",
           "scenario": "Actual Scenarios",
           "time": "2025M8",
           "view": "Periodic",
-          "account": "59999",
+          "account": "AcctTop",
           "flow": "FLWTop",
           "origin": "Top",
           "ic": "Top",
@@ -45,7 +56,7 @@
         "valid_dims": {
           "overridden_dimensions": [
             "time",
-            "ud3"
+            "account"
           ],
           "scenario_types": [
             "Actual"
@@ -92,15 +103,15 @@
   },
   {
     "artifact_data": {
-      "id": "014ef01e-ecdc-002c-07a9-7e203317c09a",
+      "id": "2888fd6b-d03e-74c7-079e-bc803317c9ce",
       "user_id": "5b98dfee-7a2d-4093-94a0-9669cac5b0cb",
       "artifact_type": "cube_view",
       "artifact_data": {
         "rows": [
           {
-            "primary_dimension": "UD3",
+            "primary_dimension": "Account",
             "row_column": [
-              "U3#PRD120.Tree"
+              "A#63000"
             ]
           }
         ],
@@ -108,24 +119,19 @@
           {
             "primary_dimension": "Time",
             "row_column": [
-              "T#2025M2",
-              "T#2025M3",
-              "T#2025M4",
-              "T#2025M5",
-              "T#2025M6",
-              "T#2025M7"
+              "T#2025M8.Prior12"
             ]
           }
         ],
         "pov": {
           "cube_name": "Equipment Division",
-          "entity": "GSE",
+          "entity": "EUS01",
           "parent": "",
           "consolidation": "Local",
           "scenario": "Actual Scenarios",
           "time": "2025M8",
           "view": "Periodic",
-          "account": "59999",
+          "account": "AcctTop",
           "flow": "FLWTop",
           "origin": "Top",
           "ic": "Top",
@@ -141,7 +147,7 @@
         "valid_dims": {
           "overridden_dimensions": [
             "time",
-            "ud3"
+            "account"
           ],
           "scenario_types": [
             "Actual"
