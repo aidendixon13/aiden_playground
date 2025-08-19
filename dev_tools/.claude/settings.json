@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(tree:*)",
+      "Bash(python -m pytest source/wernicke/tests/unit_tests/agents/rubix/cube_view/test_mock_cosmos_uow.py::TestMockUDSettingsCosmosUnitOfWork::test_ud_settings_uow_context_manager -xvs)",
+      "Bash(git fetch:*)",
+      "Bash(rg:*)"
+    ],
+    "deny": [],
+    "ask": [],
+    "defaultMode": "acceptEdits"
+  }
+}
