@@ -48,12 +48,12 @@ from wernicke.engines.processing.settings.adapters.uow.user_settings.cosmos impo
 )
 from wernicke.engines.retrieval.index_management.models import IndexService
 from wernicke.managers.cosmos_database.azure_cosmos_manager import CosmosDatabaseManager
-from wernicke.shared.guid import guid_to_str, new_guid
+from wernicke.shared.guid import guid_to_str, new_guid, str_to_guid
 
 # Removed unused emulator imports for direct orchestrator interaction
-from wernicke.tests.mocks.onestream_metadata.expansion_count.expansion_count import (
-    MockExpansionCountService,
-)
+# from wernicke.tests.mocks.onestream_metadata.expansion_count.expansion_count import (
+#     MockExpansionCountService,
+# )
 from wernicke.tests.shared_utils.test_session import create_test_user_session
 
 
@@ -179,7 +179,7 @@ def handle_hil_interaction(hil_outputs):
 
 # Single question with eval notes
 question = InputModel(
-    question="Show me the absolute numerical difference in `40000: Revenue` between the Actual scenario and the BudgetFinal scenario for each Segment in the 1_HealthofBiz Cube View for the April 2025 Periodic.",
+    question="Show me my revenue accounts for North America.",
     eval_notes="""
     If you are asked to select a cube, select the `Equipment Division` cube.
     If you are asked about what measure would you like to use to calculate the difference between Actual and BudgetFinal, you can use 40000.
@@ -230,6 +230,7 @@ async def execute_orchestrator():
             ud_types=ud_types,
             time_scope=TimeScope.NONE,
             cube_name="Equipment Division",  # Assuming the user selects this cube
+            # persona_id=str_to_guid("2f616574-e6d6-8042-0027-5d603322c3c5"),
         )
 
         thread_id = random.randint(1, 10000)
@@ -336,10 +337,10 @@ if __name__ == "__main__":
     from unittest.mock import patch
 
     # Patch ExpansionCountService with our mock
-    with patch(
-        "wernicke.agents.rubix.cube_view.subgraph_orchestrators.cube_view_builder_orchestrator.state.ExpansionCountService", MockExpansionCountService
-    ):
-        result, response_type = asyncio.run(execute_orchestrator())
-        print("\n📋 Final Results:")
-        print(f"Result: {result}")
-        print(f"Response Type: {response_type}")
+    # with patch(
+    #     "wernicke.agents.rubix.cube_view.subgraph_orchestrators.cube_view_builder_orchestrator.state.ExpansionCountService", MockExpansionCountService
+    # ):
+    result, response_type = asyncio.run(execute_orchestrator())
+    print("\n📋 Final Results:")
+    print(f"Result: {result}")
+    print(f"Response Type: {response_type}")
