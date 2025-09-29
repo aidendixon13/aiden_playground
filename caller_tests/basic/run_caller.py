@@ -61,9 +61,23 @@ async def main() -> None:
     inputs = caller.input_model(input="Say hello and tell me today's date in one sentence.")
 
     # Run asynchronously and print the final string output
-    result = await caller.arun(inputs=inputs)
-    print("hello")
-    print(result)
+    count = 10
+    responses = {}
+
+    for _ in range(count):
+        result = await caller.arun(inputs=inputs)
+        responses[result] = responses.get(result, 0) + 1
+
+    dominant_response = 0
+    for response, count in responses.items():
+        print(f"{response}: {count}")
+        if count > dominant_response:
+            dominant_response = response
+            dominant_response_count = response
+
+    print(f"Responses diversity: {len(responses)}")
+    print(f"Dominant response: {dominant_response}")
+    print(f"Dominant response count: {dominant_response_count}")
 
 
 if __name__ == "__main__":

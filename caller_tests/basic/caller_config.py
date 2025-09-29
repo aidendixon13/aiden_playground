@@ -30,7 +30,7 @@ AidenPlaygroundChatConfig: CallerChatConfig = CallerChatConfig(
     llm_type=LLMTypeFactory.get_llm_type(model_provider=WernickeModelProvider.OPENAI),
     llm_init_kwargs={
         "model_name": OpenAIModels.GPT4_OMNI,
-        "temperature": 0.2,
+        "temperature": 0,
     },
     prompt_messages=[
         # Provide a concise, helpful system message using the shared core prompt

@@ -179,7 +179,7 @@ def handle_hil_interaction(hil_outputs):
 
 # Single question with eval notes
 question = InputModel(
-    question="Show me my revenue accounts for North America.",
+    question="show me the variance between actual and budgets for my reveune accounts for North America.",
     eval_notes="""
     If you are asked to select a cube, select the `Equipment Division` cube.
     If you are asked about what measure would you like to use to calculate the difference between Actual and BudgetFinal, you can use 40000.
