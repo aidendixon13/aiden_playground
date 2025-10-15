@@ -1,7 +1,7 @@
 [
   {
     "artifact_data": {
-      "id": "9e6b6599-bbab-57b8-000d-62003339f8dc",
+      "id": "f8fdfa55-a692-8933-007d-25403339e352",
       "user_id": "5b98dfee-7a2d-4093-94a0-9669cac5b0cb",
       "artifact_type": "cube_view",
       "artifact_data": {
@@ -9,7 +9,7 @@
           {
             "primary_dimension": "Account",
             "row_column": [
-              "A#40000.Tree"
+              "A#41000.Tree"
             ]
           }
         ],
@@ -17,7 +17,9 @@
           {
             "primary_dimension": "Time",
             "row_column": [
-              "T#2025M8"
+              "T#2025Q1",
+              "T#2025Q2",
+              "GetDataCell(BWDiff(T#2025Q1,T#2025Q2)):Name(Variance)"
             ]
           }
         ],
@@ -35,7 +37,7 @@
           "ic": "Top",
           "ud1": "CCTop",
           "ud2": "NA",
-          "ud3": "PRDTop",
+          "ud3": "PRD110W2",
           "ud4": "CSTTop",
           "ud5": "UD5Top",
           "ud6": "UD6Top",

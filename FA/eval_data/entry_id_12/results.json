@@ -1,15 +1,17 @@
 [
   {
     "artifact_data": {
-      "id": "9e6b6599-bbab-57b8-000d-62003339f8dc",
+      "id": "011619d8-fcf7-22e0-02d7-9e40333885c0",
       "user_id": "5b98dfee-7a2d-4093-94a0-9669cac5b0cb",
       "artifact_type": "cube_view",
       "artifact_data": {
         "rows": [
           {
-            "primary_dimension": "Account",
+            "primary_dimension": "UD4",
             "row_column": [
-              "A#40000.Tree"
+              "U4#CST1202",
+              "U4#CST1101",
+              "U4#CST1201"
             ]
           }
         ],
@@ -17,7 +19,7 @@
           {
             "primary_dimension": "Time",
             "row_column": [
-              "T#2025M8"
+              "T#2024M2"
             ]
           }
         ],
@@ -27,14 +29,14 @@
           "parent": "",
           "consolidation": "Local",
           "scenario": "Actual Scenarios",
-          "time": "2025M8",
+          "time": "2024M2",
           "view": "Periodic",
-          "account": "AcctTop",
+          "account": "40000",
           "flow": "FLWTop",
           "origin": "Top",
           "ic": "Top",
           "ud1": "CCTop",
-          "ud2": "NA",
+          "ud2": "REGTop",
           "ud3": "PRDTop",
           "ud4": "CSTTop",
           "ud5": "UD5Top",
@@ -44,8 +46,8 @@
         },
         "valid_dims": {
           "overridden_dimensions": [
-            "time",
-            "account"
+            "ud4",
+            "time"
           ],
           "scenario_types": [
             "Actual"

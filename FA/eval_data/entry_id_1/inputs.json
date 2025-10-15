@@ -3,20 +3,23 @@
     "errors": [],
     "user_input": "Show me my detailed income statement broken up by region.",
     "ud_types": {
-      "Cost Center": "5b8c0643-c22c-fbc4-0730-29a0330b7bb0",
-      "Region": "83e97154-6ceb-0ae9-0730-0fa0330b7bb0",
-      "Product": "4948a918-2bf0-dc2e-0730-d5e0330b7bb0",
-      "Customer": "ab802a6f-5083-9f1a-0730-fec0330b7bb0",
-      "Project": "88cface0-9783-a561-0730-fb40330b7bb0",
-      "Vendor": "3dc276dd-2782-2882-0730-5ac0330b7bb0",
-      "Business Unit": "adfc0a33-fca2-3d7d-0730-d280330b7bb0",
-      "Department": "9e77bf37-a055-ea92-0730-c6a0330b7bb0",
-      "Not Used": "e83d68d0-7962-5358-0730-de60330b7bb0"
+      "Cost Center": "b2cbe1db-f405-ab7f-00f3-a7003325f162",
+      "Region": "33dc891d-3c03-e5aa-00f3-2ec03325f162",
+      "Product": "4e562e4a-37f5-392a-00f3-88803325f162",
+      "Customer": "c4c82854-592e-970c-00f3-29603325f162",
+      "Project": "918525d2-1f70-caae-00f3-4ba03325f162",
+      "Vendor": "00fa3323-21e6-1788-00f3-e0003325f162",
+      "Business Unit": "b86a0e68-492d-d1a5-00f3-0cc03325f162",
+      "Department": "c8987f98-013b-c003-00f3-8c603325f162",
+      "Not Used": "34127731-6993-e714-00f3-6ea03325f162"
     },
     "cube_name": null,
     "persona_id": null,
     "smart_cube_identification_setting": "SmartCubeIdentificationSettings.OFF",
     "time_scope": "TimeScope.NONE",
+    "previous_messages": [],
+    "is_follow_up": false,
+    "follow_up_relevancy_message": "",
     "final_outputs": []
   },
   "orchestrator_config": {
@@ -26,16 +29,16 @@
     "force_response": true
   },
   "question": "Show me my detailed income statement broken up by region.",
-  "eval_notes": "\n    If you are asked to select a cube, select the `Equipment Division` cube. \n    If you are asked to specific a time, say August 2025.\n    If you are asked the regional detail you should select Global (Tree) or REGTop (Tree).\n    ",
+  "eval_notes": "\n    \n    Pick Equipement division for the Cube\n    for region pick Global.Tree\n    the time period should be august 2025\n\n    ## Member Expansion Functions Explained:\n    \n    1. .Base - Includes all members at the lowest level in the hierarchy, ignoring any parent or \n       intermediate categories. Base members are the most detailed and granular members in the \n       hierarchy. Base members will represent a single level of granularity at the lowest level \n       below the selected member.\n    \n    2. .ChildrenInclusive - Includes the selected member and only its immediate child members \n       (the next level down). Children will represent a single level of granularity.\n    \n    3. .Children - Only includes the immediate children of the selected member and not the \n       selected member itself. Does not include any grandchildren or other levels of the hierarchy.\n    \n    4. .Tree - Includes the selected member and all members in every level below it.\n    \n    Note: Expansion functions should NEVER be applied to Time dimension members or Dimension Member Groupings.\n    ",
   "ud_types": {
-    "Cost Center": "5b8c0643-c22c-fbc4-0730-29a0330b7bb0",
-    "Region": "83e97154-6ceb-0ae9-0730-0fa0330b7bb0",
-    "Product": "4948a918-2bf0-dc2e-0730-d5e0330b7bb0",
-    "Customer": "ab802a6f-5083-9f1a-0730-fec0330b7bb0",
-    "Project": "88cface0-9783-a561-0730-fb40330b7bb0",
-    "Vendor": "3dc276dd-2782-2882-0730-5ac0330b7bb0",
-    "Business Unit": "adfc0a33-fca2-3d7d-0730-d280330b7bb0",
-    "Department": "9e77bf37-a055-ea92-0730-c6a0330b7bb0",
-    "Not Used": "e83d68d0-7962-5358-0730-de60330b7bb0"
+    "Cost Center": "b2cbe1db-f405-ab7f-00f3-a7003325f162",
+    "Region": "33dc891d-3c03-e5aa-00f3-2ec03325f162",
+    "Product": "4e562e4a-37f5-392a-00f3-88803325f162",
+    "Customer": "c4c82854-592e-970c-00f3-29603325f162",
+    "Project": "918525d2-1f70-caae-00f3-4ba03325f162",
+    "Vendor": "00fa3323-21e6-1788-00f3-e0003325f162",
+    "Business Unit": "b86a0e68-492d-d1a5-00f3-0cc03325f162",
+    "Department": "c8987f98-013b-c003-00f3-8c603325f162",
+    "Not Used": "34127731-6993-e714-00f3-6ea03325f162"
   }
 }

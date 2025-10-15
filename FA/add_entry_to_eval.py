@@ -2,6 +2,11 @@
 """
 Script to extract data from experimental entry_id_<index> directories and add them
 to the cube_view_orchestrator.json evaluation file.
+
+This script will:
+1. Read the question from inputs.json
+2. Format eval_notes using the FIRST artifact from results.json + expansion explanations
+3. Add all unique artifacts from results.json as expected_outputs
 """
 
 import json
@@ -9,7 +14,68 @@ import os
 import sys
 
 # Set the entry index to process (change this to match your CURRENT_INDEX)
-ENTRY_INDEX = 12
+ENTRY_INDEX = 0
+
+# Expansion explanations template
+EXPANSION_EXPLANATIONS = """
+## Member Expansion Functions Explained:
+
+1. .Base - Includes all members at the lowest level in the hierarchy, ignoring any parent or 
+   intermediate categories. Base members are the most detailed and granular members in the 
+   hierarchy. Base members will represent a single level of granularity at the lowest level 
+   below the selected member.
+
+2. .ChildrenInclusive - Includes the selected member and only its immediate child members 
+   (the next level down). Children will represent a single level of granularity.
+
+3. .Children - Only includes the immediate children of the selected member and not the 
+   selected member itself. Does not include any grandchildren or other levels of the hierarchy.
+
+4. .Tree - Includes the selected member and all members in every level below it.
+
+Note: Expansion functions should NEVER be applied to Time dimension members or Dimension Member Groupings.
+"""
+
+
+def format_artifact_data_as_text(artifact_data: dict) -> str:
+    """
+    Format the artifact_data dict as a readable text representation.
+
+    Args:
+        artifact_data (dict): The artifact data from results.
+
+    Returns:
+        str: Formatted artifact data string.
+    """
+    if not artifact_data or "artifact_data" not in artifact_data:
+        return ""
+
+    data = artifact_data["artifact_data"]
+
+    # Extract the key fields with proper indentation
+    rows_str = json.dumps(data.get("rows", []), indent=2)
+    columns_str = json.dumps(data.get("columns", []), indent=2)
+    pov_str = json.dumps(data.get("pov", {}), indent=2)
+
+    # Indent each line of the JSON dumps for consistent formatting
+    rows_lines = rows_str.split("\n")
+    rows_indented = "\n      ".join(rows_lines)
+
+    columns_lines = columns_str.split("\n")
+    columns_indented = "\n      ".join(columns_lines)
+
+    pov_lines = pov_str.split("\n")
+    pov_indented = "\n      ".join(pov_lines)
+
+    formatted = f"""    Here is the ideal output in Artifact Form:
+    <artifact_data>
+    "rows": {rows_indented},
+    "columns": {columns_indented},
+    "pov": {pov_indented}
+    </artifact_data>
+    """
+
+    return formatted
 
 
 def load_json_file(file_path: str) -> dict:
@@ -71,9 +137,20 @@ def create_evaluation_entry(entry_index: int, inputs_data: dict, results_data: l
     Returns:
         dict: Formatted evaluation entry
     """
-    # Extract the question and eval_notes from inputs
+    # Extract the question from inputs
     question = inputs_data.get("question", "")
-    eval_notes = inputs_data.get("eval_notes", "")
+
+    # Format eval_notes from the first artifact + expansion explanations
+    eval_notes = ""
+    if results_data and len(results_data) > 0:
+        first_result = results_data[0]
+        if first_result and first_result.get("artifact_data"):
+            artifact_text = format_artifact_data_as_text(first_result["artifact_data"])
+            eval_notes = artifact_text + "\n" + EXPANSION_EXPLANATIONS
+
+    # Fallback if no artifact data
+    if not eval_notes:
+        eval_notes = EXPANSION_EXPLANATIONS
 
     # Create the entry structure
     entry = {
@@ -111,9 +188,18 @@ def add_entry_to_evaluation(entry_index: int, entry_dir: str, eval_file: str) ->
 
     print(f"   - Question: {inputs_data.get('question', 'N/A')}")
     print(f"   - Results: {len(results_data)} artifacts")
+    print(f"   - Eval notes: Generated from first artifact + expansion explanations")
 
     # Load existing evaluation file
     eval_data = load_json_file(eval_file)
+
+    # Remove any existing entry with the same entry_index
+    original_count = len(eval_data["entries"])
+    eval_data["entries"] = [entry for entry in eval_data["entries"] if entry.get("entry_index") != entry_index]
+    removed_count = original_count - len(eval_data["entries"])
+
+    if removed_count > 0:
+        print(f"   - Removed {removed_count} existing entry(ies) with entry_index {entry_index}")
 
     # Create new evaluation entry
     new_entry = create_evaluation_entry(entry_index, inputs_data, results_data)

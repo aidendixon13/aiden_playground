@@ -1,0 +1,42 @@
+{
+  "graph_state": {
+    "errors": [],
+    "user_input": "Show me our revenue accounts for the Mach Speed product line in FY2024",
+    "ud_types": {
+      "Cost Center": "5602d0ec-81eb-44d3-0328-1b8033260a49",
+      "Region": "6402894d-2656-bd1c-0328-7b0033260a49",
+      "Product": "fd309ec6-788c-8b3e-0328-cb2033260a49",
+      "Customer": "5b0f7dfd-62f8-258a-0328-ffa033260a49",
+      "Project": "69f902e4-9498-e4c7-0328-96e033260a49",
+      "Vendor": "41a0a069-bd76-ea88-0328-b26033260a49",
+      "Business Unit": "b97b1540-0f66-e6df-0328-ebc033260a49",
+      "Department": "05c37efd-e931-2995-0328-37e033260a49",
+      "Not Used": "2be0e6be-525d-99a8-0328-a3e033260a49"
+    },
+    "cube_name": null,
+    "persona_id": null,
+    "smart_cube_identification_setting": "SmartCubeIdentificationSettings.OFF",
+    "time_scope": "TimeScope.NONE",
+    "previous_messages": [],
+    "final_outputs": []
+  },
+  "orchestrator_config": {
+    "index_service": "AZURE_COGNITIVE_SEARCH",
+    "error_handling_active": true,
+    "max_iterations": 5,
+    "force_response": true
+  },
+  "question": "Show me our revenue accounts for the Mach Speed product line in FY2024",
+  "eval_notes": "\n    If you are asked to select a cube, select the `Equipment Division` cube.\n    If you are asked about revenue, you would like a breakdown of the `40000 revenues` account.\n    ",
+  "ud_types": {
+    "Cost Center": "5602d0ec-81eb-44d3-0328-1b8033260a49",
+    "Region": "6402894d-2656-bd1c-0328-7b0033260a49",
+    "Product": "fd309ec6-788c-8b3e-0328-cb2033260a49",
+    "Customer": "5b0f7dfd-62f8-258a-0328-ffa033260a49",
+    "Project": "69f902e4-9498-e4c7-0328-96e033260a49",
+    "Vendor": "41a0a069-bd76-ea88-0328-b26033260a49",
+    "Business Unit": "b97b1540-0f66-e6df-0328-ebc033260a49",
+    "Department": "05c37efd-e931-2995-0328-37e033260a49",
+    "Not Used": "2be0e6be-525d-99a8-0328-a3e033260a49"
+  }
+}

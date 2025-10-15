@@ -1,15 +1,15 @@
-[
-  {
-    "artifact_data": {
-      "id": "9e6b6599-bbab-57b8-000d-62003339f8dc",
-      "user_id": "5b98dfee-7a2d-4093-94a0-9669cac5b0cb",
+{
+  "cube_view_artifacts": [
+    {
+      "id": "c21d976c-62d9-1f08-011b-394033342fc1",
+      "user_id": "e2259ff4-ba06-4641-9b10-c13abe9df85c",
       "artifact_type": "cube_view",
       "artifact_data": {
         "rows": [
           {
-            "primary_dimension": "Account",
+            "primary_dimension": "Entity",
             "row_column": [
-              "A#40000.Tree"
+              "E#NAE.Base"
             ]
           }
         ],
@@ -17,7 +17,7 @@
           {
             "primary_dimension": "Time",
             "row_column": [
-              "T#2025M8"
+              "T#2024M1"
             ]
           }
         ],
@@ -26,15 +26,15 @@
           "entity": "GSE",
           "parent": "",
           "consolidation": "Local",
-          "scenario": "Actual Scenarios",
-          "time": "2025M8",
+          "scenario": "Actual",
+          "time": "2025M10",
           "view": "Periodic",
-          "account": "AcctTop",
+          "account": "99999",
           "flow": "FLWTop",
           "origin": "Top",
           "ic": "Top",
           "ud1": "CCTop",
-          "ud2": "NA",
+          "ud2": "REGTop",
           "ud3": "PRDTop",
           "ud4": "CSTTop",
           "ud5": "UD5Top",
@@ -45,7 +45,7 @@
         "valid_dims": {
           "overridden_dimensions": [
             "time",
-            "account"
+            "entity"
           ],
           "scenario_types": [
             "Actual"
@@ -86,8 +86,41 @@
           "UD8": [
             "ReportingMetrics"
           ]
-        }
-      }
+        },
+        "Members": [
+          {
+            "DimType": "Entity",
+            "MemberName": "NAE",
+            "Expansion": "Base",
+            "Level": 0
+          }
+        ],
+        "analysis_steps": [
+          {
+            "AnalysisType": "Sort",
+            "Target": {
+              "Type": "Members",
+              "Members": [
+                
+                {
+                  "DimType": "Time",
+                  "MemberName": "2024M1",
+                  "Expansion": "",
+                  "Level": 0
+                }
+              ]
+            },
+            "Order": "Descending",
+            "NullHandle": "Last"
+          }
+        ]
+      },
+      "class_name": "IArtifact",
+      "_rid": "83x3AOw2tMInAAAAAAAAAA==",
+      "_self": "dbs/83x3AA==/colls/83x3AOw2tMI=/docs/83x3AOw2tMInAAAAAAAAAA==/",
+      "_etag": "\"a404013c-0000-0100-0000-68ded97b0000\"",
+      "_attachments": "attachments/",
+      "_ts": 1759435131
     }
-  }
-]
+  ]
+}

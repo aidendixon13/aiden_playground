@@ -9,68 +9,34 @@ import httpx
 from huggingface_hub import User
 from pydantic import BaseModel
 
-from wernicke.agents.rubix.cube_view.cube_view_orchestrator.cube_view_orchestrator import (
-    CubeViewOrchestrator,
-)
-from wernicke.agents.rubix.cube_view.cube_view_orchestrator.state import (
-    CubeViewOrchestratorState,
-)
+from wernicke.agents.rubix.cube_view.cube_view_orchestrator.cube_view_orchestrator import CubeViewOrchestrator
+from wernicke.agents.rubix.cube_view.cube_view_orchestrator.state import CubeViewOrchestratorState
 from wernicke.agents.rubix.cube_view.models import TimeScope
-from wernicke.agents.rubix.cube_view.subgraph_orchestrators.cube_identifier_orchestrator.models import (
-    SmartCubeIdentificationSettings,
-)
+from wernicke.agents.rubix.cube_view.subgraph_orchestrators.cube_identifier_orchestrator.models import SmartCubeIdentificationSettings
 from wernicke.app.dependencies import get_http_client
-from wernicke.engines.llm.auxillary.artifacts.adapters.uow.cosmos import (
-    ArtifactCosmosUnitOfWork,
-)
-from wernicke.engines.llm.auxillary.callbacks.streaming_callback import (
-    AsyncStreamingCallbackHandler,
-)
+from wernicke.engines.llm.auxillary.artifacts.adapters.uow.cosmos import ArtifactCosmosUnitOfWork
+from wernicke.engines.llm.auxillary.callbacks.streaming_callback import AsyncStreamingCallbackHandler
 from wernicke.engines.llm.hil_adapter.base import HilInputFormat
-from wernicke.engines.llm.llm_orchestrators.graph_llm_orchestrators.graph_checkpointers.cosmos_db_checkpointer import (
-    AzureCosmosDBCheckpointer,
-)
+from wernicke.engines.llm.llm_orchestrators.graph_llm_orchestrators.graph_checkpointers.cosmos_db_checkpointer import AzureCosmosDBCheckpointer
 from wernicke.engines.llm.llm_orchestrators.graph_llm_orchestrators.graph_checkpointers.table_storage_checkpointer import (
     AzureTableStorageCheckpointer,
 )
-from wernicke.engines.llm.llm_orchestrators.graph_llm_orchestrators.models import (
-    BaseGraphState,
-    GraphInputModel,
-    GraphOutputModel,
-    HilResponseModel,
-)
+from wernicke.engines.llm.llm_orchestrators.graph_llm_orchestrators.models import BaseGraphState, GraphInputModel, GraphOutputModel, HilResponseModel
 from wernicke.engines.llm.models import ResponseType
-from wernicke.engines.processing.onestream_metadata.dim_member_groupings.adapters.uow.cosmos import (
-    DimMemberGroupingCosmosUnitOfWork,
-)
-from wernicke.engines.processing.settings.adapters.uow.company_settings.cosmos import (
-    CompanySettingsCosmosUnitOfWork,
-)
-from wernicke.engines.processing.settings.adapters.uow.persona_settings.cosmos import (
-    PersonaSettingsCosmosUnitOfWork,
-)
-from wernicke.engines.processing.settings.adapters.uow.ud_types_setting.cosmos import (
-    UDSettingsCosmosUnitOfWork,
-)
-from wernicke.engines.processing.settings.adapters.uow.user_settings.cosmos import (
-    UserSettingsCosmosUnitOfWork,
-)
+from wernicke.engines.processing.onestream_metadata.dim_member_groupings.adapters.uow.cosmos import DimMemberGroupingCosmosUnitOfWork
+from wernicke.engines.processing.settings.adapters.uow.company_settings.cosmos import CompanySettingsCosmosUnitOfWork
+from wernicke.engines.processing.settings.adapters.uow.persona_settings.cosmos import PersonaSettingsCosmosUnitOfWork
+from wernicke.engines.processing.settings.adapters.uow.ud_types_setting.cosmos import UDSettingsCosmosUnitOfWork
+from wernicke.engines.processing.settings.adapters.uow.user_settings.cosmos import UserSettingsCosmosUnitOfWork
 from wernicke.engines.retrieval.index_management.models import IndexService
 from wernicke.internals.session import user_session
 from wernicke.internals.session.user_session import UserSessionInfo
 from wernicke.managers.cosmos_database.azure_cosmos_manager import CosmosDatabaseManager
 from wernicke.shared.guid import guid_to_str
-from wernicke.tests.evaluations.emulators.orchestrators.emulator import (
-    OrchestratorEmulator,
-)
-from wernicke.tests.evaluations.emulators.orchestrators.models import (
-    OrchestratorEmulatorInputModel,
-    OrchestratorEmulatorOutputModel,
-)
+from wernicke.tests.evaluations.emulators.orchestrators.emulator import OrchestratorEmulator
+from wernicke.tests.evaluations.emulators.orchestrators.models import OrchestratorEmulatorInputModel, OrchestratorEmulatorOutputModel
 from wernicke.tests.mocks.datetime_mock import MockDatetime
-from wernicke.tests.mocks.onestream_metadata.expansion_count.expansion_count import (
-    MockExpansionCountService,
-)
+from wernicke.tests.mocks.onestream_metadata.expansion_count.expansion_count import MockExpansionCountService
 from wernicke.tests.shared_utils.test_jwt import decode_test_jwt
 from wernicke.tests.shared_utils.test_session import create_test_user_session
 
@@ -81,15 +47,38 @@ class InputModel(BaseModel):
 
 
 # Set the current index for directory naming
-CURRENT_INDEX = 12
+CURRENT_INDEX = 2
 
 # Single question with eval notes
 question = InputModel(
-    question="Show total marketing spend in North America from October to December 2024.",
+    question="Show me my revenue accounts for North America.",
     eval_notes="""
-    If you are asked to select a cube, select the `Equipment Division` cube.
+    
+    Pick Equipement division for the Cube
+    revenue accounts pick A#40000.Tree
+    for region pick NA
+    the time period should be august 2025
     """,
 )
+
+EXPANSION_FUNCTIONS_STRING = """
+## Member Expansion Functions Explained:
+    
+    1. .Base - Includes all members at the lowest level in the hierarchy, ignoring any parent or 
+       intermediate categories. Base members are the most detailed and granular members in the 
+       hierarchy. Base members will represent a single level of granularity at the lowest level 
+       below the selected member.
+    
+    2. .ChildrenInclusive - Includes the selected member and only its immediate child members 
+       (the next level down). Children will represent a single level of granularity.
+    
+    3. .Children - Only includes the immediate children of the selected member and not the 
+       selected member itself. Does not include any grandchildren or other levels of the hierarchy.
+    
+    4. .Tree - Includes the selected member and all members in every level below it.
+    
+    Note: Expansion functions should NEVER be applied to Time dimension members or Dimension Member Groupings.
+"""
 
 
 async def execute_orchestrator():

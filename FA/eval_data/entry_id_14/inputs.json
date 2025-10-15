@@ -1,0 +1,44 @@
+{
+  "graph_state": {
+    "errors": [],
+    "user_input": "Show me a comparison of our Q1 and Q2 revenue accounts related to the selling of Mach 10 clubs in North America",
+    "ud_types": {
+      "Cost Center": "5602d0ec-81eb-44d3-0328-1b8033260a49",
+      "Region": "6402894d-2656-bd1c-0328-7b0033260a49",
+      "Product": "fd309ec6-788c-8b3e-0328-cb2033260a49",
+      "Customer": "5b0f7dfd-62f8-258a-0328-ffa033260a49",
+      "Project": "69f902e4-9498-e4c7-0328-96e033260a49",
+      "Vendor": "41a0a069-bd76-ea88-0328-b26033260a49",
+      "Business Unit": "b97b1540-0f66-e6df-0328-ebc033260a49",
+      "Department": "05c37efd-e931-2995-0328-37e033260a49",
+      "Not Used": "2be0e6be-525d-99a8-0328-a3e033260a49"
+    },
+    "cube_name": null,
+    "persona_id": null,
+    "smart_cube_identification_setting": "SmartCubeIdentificationSettings.OFF",
+    "time_scope": "TimeScope.NONE",
+    "previous_messages": [],
+    "is_follow_up": false,
+    "follow_up_relevancy_message": "",
+    "final_outputs": []
+  },
+  "orchestrator_config": {
+    "index_service": "AZURE_COGNITIVE_SEARCH",
+    "error_handling_active": true,
+    "max_iterations": 5,
+    "force_response": true
+  },
+  "question": "Show me a comparison of our Q1 and Q2 revenue accounts related to the selling of Mach 10 clubs in North America",
+  "eval_notes": "\n    Here is the Idea output in Artifact Form:\n    <artifact_data>\n    \"rows\": [\n      {\n        \"primary_dimension\": \"Account\",\n        \"row_column\": [\"A#40000.Tree\"]\n      }\n    ],\n    \"columns\": [\n      {\n        \"primary_dimension\": \"Time\",\n        \"row_column\": [\n          \"T#2025Q1\",\n          \"T#2025Q2\",\n          \"GetDataCell(BWDiff(T#2025Q1,T#2025Q2)):Name(Variance)\"\n        ]\n      }\n    ],\n    \"pov\": {\n      \"cube_name\": \"Equipment Division\",\n      \"entity\": \"GSE\",\n      \"parent\": \"\",\n      \"consolidation\": \"Local\",\n      \"scenario\": \"Actual Scenarios\",\n      \"time\": \"2025M8\",\n      \"view\": \"Periodic\",\n      \"account\": \"AcctTop\",\n      \"flow\": \"FLWTop\",\n      \"origin\": \"Top\",\n      \"ic\": \"Top\",\n      \"ud1\": \"CCTop\",\n      \"ud2\": \"NA\",\n      \"ud3\": \"PRD110W2\",\n      \"ud4\": \"CSTTop\",\n      \"ud5\": \"UD5Top\",\n      \"ud6\": \"UD6Top\",\n      \"ud7\": \"UD7Top\",\n      \"ud8\": \"RPTTop\"\n    },\n    </artifact_data>\n    \n    ## Member Expansion Functions Explained:\n    \n    1. .Base - Includes all members at the lowest level in the hierarchy, ignoring any parent or \n       intermediate categories. Base members are the most detailed and granular members in the \n       hierarchy. Base members will represent a single level of granularity at the lowest level \n       below the selected member.\n    \n    2. .ChildrenInclusive - Includes the selected member and only its immediate child members \n       (the next level down). Children will represent a single level of granularity.\n    \n    3. .Children - Only includes the immediate children of the selected member and not the \n       selected member itself. Does not include any grandchildren or other levels of the hierarchy.\n    \n    4. .Tree - Includes the selected member and all members in every level below it.\n    \n    Note: Expansion functions should NEVER be applied to Time dimension members or Dimension Member Groupings.\n    ",
+  "ud_types": {
+    "Cost Center": "5602d0ec-81eb-44d3-0328-1b8033260a49",
+    "Region": "6402894d-2656-bd1c-0328-7b0033260a49",
+    "Product": "fd309ec6-788c-8b3e-0328-cb2033260a49",
+    "Customer": "5b0f7dfd-62f8-258a-0328-ffa033260a49",
+    "Project": "69f902e4-9498-e4c7-0328-96e033260a49",
+    "Vendor": "41a0a069-bd76-ea88-0328-b26033260a49",
+    "Business Unit": "b97b1540-0f66-e6df-0328-ebc033260a49",
+    "Department": "05c37efd-e931-2995-0328-37e033260a49",
+    "Not Used": "2be0e6be-525d-99a8-0328-a3e033260a49"
+  }
+}

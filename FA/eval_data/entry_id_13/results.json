@@ -1,34 +1,23 @@
 [
   {
-    "run_number": 2,
-    "thread_id": 1375,
-    "artifact_id": "92d1fe22-0e77-0dc5-06a8-3800331474d2",
     "artifact_data": {
-      "id": "92d1fe22-0e77-0dc5-06a8-3800331474d2",
+      "id": "127b5fdf-79c0-c846-0170-72c033388830",
       "user_id": "5b98dfee-7a2d-4093-94a0-9669cac5b0cb",
       "artifact_type": "cube_view",
       "artifact_data": {
         "rows": [
           {
-            "primary_dimension": "UD4",
-            "row_column": [
-              "U4#CST1100.Tree"
-            ]
-          },
-          {
             "primary_dimension": "Account",
             "row_column": [
-              "A#40000.Tree"
+              "A#40000.Children"
             ]
           }
         ],
         "columns": [
           {
-            "primary_dimension": "Scenario",
+            "primary_dimension": "Time",
             "row_column": [
-              "S#Actual",
-              "S#BudgetFinal",
-              "GetDataCell(BWDiff(S#Actual,S#BudgetFinal)):Name(Variance)"
+              "T#2024"
             ]
           }
         ],
@@ -38,7 +27,7 @@
           "parent": "",
           "consolidation": "Local",
           "scenario": "Actual Scenarios",
-          "time": "2025M3",
+          "time": "2024",
           "view": "Periodic",
           "account": "AcctTop",
           "flow": "FLWTop",
@@ -46,7 +35,7 @@
           "ic": "Top",
           "ud1": "CCTop",
           "ud2": "REGTop",
-          "ud3": "PRDTop",
+          "ud3": "PRD110",
           "ud4": "CSTTop",
           "ud5": "UD5Top",
           "ud6": "UD6Top",
@@ -55,69 +44,55 @@
         },
         "valid_dims": {
           "overridden_dimensions": [
-            "ud4",
             "account",
-            "scenario"
+            "time"
           ],
           "scenario_types": [
-            "Actual",
-            "Budget"
+            "Actual"
           ],
           "Entity": [
             "Equipment"
           ],
           "Account": [
-            "Equipment Accounts Actuals",
-            "Equipment Accounts"
+            "Equipment Accounts Actuals"
           ],
           "Scenario": [
             "Scenarios"
           ],
           "Flow": [
-            "Detail Flows",
-            "Flows"
+            "Detail Flows"
           ],
           "UD1": [
-            "Equipment Cost Centers Budget",
             "Equipment Cost Centers"
           ],
           "UD2": [
-            "Regions",
             "StateProvince"
           ],
           "UD3": [
-            "Equipment Product Category",
             "Equipment Products"
           ],
           "UD4": [
-            "Equipment Customer Category",
             "Equipment Customer Detail"
           ],
           "UD5": [
-            "Equipment Projects",
             "MainUD5"
           ],
           "UD6": [
             "MainUD6"
           ],
           "UD7": [
-            "Detail Data Type",
-            "Data Type"
+            "Detail Data Type"
           ],
           "UD8": [
             "ReportingMetrics"
           ]
         }
       }
-    },
-    "timestamp": 1755092261.9735954
+    }
   },
   {
-    "run_number": 3,
-    "thread_id": 6169,
-    "artifact_id": "d152f1ad-5067-89d9-010f-fc40331474f1",
     "artifact_data": {
-      "id": "d152f1ad-5067-89d9-010f-fc40331474f1",
+      "id": "fec717c6-9eea-8c45-036b-69c033388847",
       "user_id": "5b98dfee-7a2d-4093-94a0-9669cac5b0cb",
       "artifact_type": "cube_view",
       "artifact_data": {
@@ -125,17 +100,15 @@
           {
             "primary_dimension": "Account",
             "row_column": [
-              "A#40000.Tree"
+              "A#40000.ChildrenInclusive"
             ]
           }
         ],
         "columns": [
           {
-            "primary_dimension": "Scenario",
+            "primary_dimension": "Time",
             "row_column": [
-              "S#Actual",
-              "S#BudgetFinal",
-              "GetDataCell(BWDiff(S#Actual,S#BudgetFinal)):Name(Variance)"
+              "T#2024"
             ]
           }
         ],
@@ -145,7 +118,7 @@
           "parent": "",
           "consolidation": "Local",
           "scenario": "Actual Scenarios",
-          "time": "2025M3",
+          "time": "2024",
           "view": "Periodic",
           "account": "AcctTop",
           "flow": "FLWTop",
@@ -153,119 +126,7 @@
           "ic": "Top",
           "ud1": "CCTop",
           "ud2": "REGTop",
-          "ud3": "PRDTop",
-          "ud4": "CST1100",
-          "ud5": "UD5Top",
-          "ud6": "UD6Top",
-          "ud7": "UD7Top",
-          "ud8": "RPTTop"
-        },
-        "valid_dims": {
-          "overridden_dimensions": [
-            "scenario",
-            "account"
-          ],
-          "scenario_types": [
-            "Actual",
-            "Budget"
-          ],
-          "Entity": [
-            "Equipment"
-          ],
-          "Account": [
-            "Equipment Accounts Actuals",
-            "Equipment Accounts"
-          ],
-          "Scenario": [
-            "Scenarios"
-          ],
-          "Flow": [
-            "Detail Flows",
-            "Flows"
-          ],
-          "UD1": [
-            "Equipment Cost Centers Budget",
-            "Equipment Cost Centers"
-          ],
-          "UD2": [
-            "Regions",
-            "StateProvince"
-          ],
-          "UD3": [
-            "Equipment Product Category",
-            "Equipment Products"
-          ],
-          "UD4": [
-            "Equipment Customer Category",
-            "Equipment Customer Detail"
-          ],
-          "UD5": [
-            "Equipment Projects",
-            "MainUD5"
-          ],
-          "UD6": [
-            "MainUD6"
-          ],
-          "UD7": [
-            "Detail Data Type",
-            "Data Type"
-          ],
-          "UD8": [
-            "ReportingMetrics"
-          ]
-        }
-      }
-    },
-    "timestamp": 1755092323.8843253
-  },
-  {
-    "run_number": 4,
-    "thread_id": 2438,
-    "artifact_id": "7b8230e0-6d9a-b8ac-00f0-b9803314750e",
-    "artifact_data": {
-      "id": "7b8230e0-6d9a-b8ac-00f0-b9803314750e",
-      "user_id": "5b98dfee-7a2d-4093-94a0-9669cac5b0cb",
-      "artifact_type": "cube_view",
-      "artifact_data": {
-        "rows": [
-          {
-            "primary_dimension": "Account",
-            "row_column": [
-              "A#40000.Tree"
-            ]
-          }
-        ],
-        "columns": [
-          {
-            "primary_dimension": "UD4",
-            "row_column": [
-              "U4#CST1100.Tree"
-            ]
-          },
-          {
-            "primary_dimension": "Scenario",
-            "row_column": [
-              "S#Actual",
-              "S#BudgetFinal",
-              "GetDataCell(BWDiff(S#Actual,S#BudgetFinal)):Name(Variance)"
-            ]
-          }
-        ],
-        "pov": {
-          "cube_name": "Equipment Division",
-          "entity": "GSE",
-          "parent": "",
-          "consolidation": "Local",
-          "scenario": "Actual Scenarios",
-          "time": "2025M3",
-          "view": "Periodic",
-          "account": "AcctTop",
-          "flow": "FLWTop",
-          "origin": "Top",
-          "ic": "Top",
-          "ud1": "CCTop",
-          "ud2": "REGTop",
-          "ud3": "PRDTop",
+          "ud3": "PRD110",
           "ud4": "CSTTop",
           "ud5": "UD5Top",
           "ud6": "UD6Top",
@@ -274,61 +135,141 @@
         },
         "valid_dims": {
           "overridden_dimensions": [
-            "ud4",
             "account",
-            "scenario"
+            "time"
           ],
           "scenario_types": [
-            "Actual",
-            "Budget"
+            "Actual"
           ],
           "Entity": [
             "Equipment"
           ],
           "Account": [
-            "Equipment Accounts Actuals",
-            "Equipment Accounts"
+            "Equipment Accounts Actuals"
           ],
           "Scenario": [
             "Scenarios"
           ],
           "Flow": [
-            "Detail Flows",
-            "Flows"
+            "Detail Flows"
           ],
           "UD1": [
-            "Equipment Cost Centers Budget",
             "Equipment Cost Centers"
           ],
           "UD2": [
-            "Regions",
             "StateProvince"
           ],
           "UD3": [
-            "Equipment Product Category",
             "Equipment Products"
           ],
           "UD4": [
-            "Equipment Customer Category",
             "Equipment Customer Detail"
           ],
           "UD5": [
-            "Equipment Projects",
             "MainUD5"
           ],
           "UD6": [
             "MainUD6"
           ],
           "UD7": [
-            "Detail Data Type",
-            "Data Type"
+            "Detail Data Type"
           ],
           "UD8": [
             "ReportingMetrics"
           ]
         }
       }
-    },
-    "timestamp": 1755092383.2059436
+    }
+  },
+  {
+    "artifact_data": {
+      "id": "1277a784-e0a2-7a24-001f-b38033388861",
+      "user_id": "5b98dfee-7a2d-4093-94a0-9669cac5b0cb",
+      "artifact_type": "cube_view",
+      "artifact_data": {
+        "rows": [
+          {
+            "primary_dimension": "Account",
+            "row_column": [
+              "A#40000.Tree"
+            ]
+          }
+        ],
+        "columns": [
+          {
+            "primary_dimension": "Time",
+            "row_column": [
+              "T#2024"
+            ]
+          }
+        ],
+        "pov": {
+          "cube_name": "Equipment Division",
+          "entity": "GSE",
+          "parent": "",
+          "consolidation": "Local",
+          "scenario": "Actual Scenarios",
+          "time": "2024",
+          "view": "Periodic",
+          "account": "AcctTop",
+          "flow": "FLWTop",
+          "origin": "Top",
+          "ic": "Top",
+          "ud1": "CCTop",
+          "ud2": "REGTop",
+          "ud3": "PRD110",
+          "ud4": "CSTTop",
+          "ud5": "UD5Top",
+          "ud6": "UD6Top",
+          "ud7": "UD7Top",
+          "ud8": "RPTTop"
+        },
+        "valid_dims": {
+          "overridden_dimensions": [
+            "account",
+            "time"
+          ],
+          "scenario_types": [
+            "Actual"
+          ],
+          "Entity": [
+            "Equipment"
+          ],
+          "Account": [
+            "Equipment Accounts Actuals"
+          ],
+          "Scenario": [
+            "Scenarios"
+          ],
+          "Flow": [
+            "Detail Flows"
+          ],
+          "UD1": [
+            "Equipment Cost Centers"
+          ],
+          "UD2": [
+            "StateProvince"
+          ],
+          "UD3": [
+            "Equipment Products"
+          ],
+          "UD4": [
+            "Equipment Customer Detail"
+          ],
+          "UD5": [
+            "MainUD5"
+          ],
+          "UD6": [
+            "MainUD6"
+          ],
+          "UD7": [
+            "Detail Data Type"
+          ],
+          "UD8": [
+            "ReportingMetrics"
+          ]
+        }
+      }
+    }
   }
 ]

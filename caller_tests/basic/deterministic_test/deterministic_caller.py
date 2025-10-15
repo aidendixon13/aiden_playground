@@ -70,11 +70,11 @@ def _serialize_config_to_messages(config: Any, variables: Dict[str, Any]) -> Lis
 
 # Example variable values for TimeResolveChatConfig prompt templates
 _variables = {
-    "current_month": "2025M9",
+    "current_month": "2025M8",
     "fiscal_year_start": "January",
-    "selected_view_members": "Periodic",
-    "user_input": "Show me my 2025 YTD revenue.",
-    "time_reference": "2025 YTD",
+    "selected_view_members": "No Specific View Members Selected",
+    "user_input": "Show me how our gross margin for the Acme Nexus Series product line has trended over the last 16 months?",
+    "time_reference": "last 16 months",
 }
 
 messages = _serialize_config_to_messages(TimeResolveChatConfig, _variables)
@@ -92,32 +92,46 @@ print(resp_responses.output_text)  # JSON string
 print("\n=== Chat Completions API (Structured + Logprobs) ===")
 
 
-def _extract_yes_no_probs(choice_logprobs) -> tuple[float | None, float | None]:
+def find_low_confidence_tokens(choice_logprobs, threshold: float = 0.001) -> list[dict]:
     """
-    Scan all token positions' top candidates and capture probabilities for 'yes' and 'no'.
+    Find token positions where the probability difference between top and bottom
+    candidates is less than the threshold.
+
+    Args:
+        choice_logprobs: The logprobs object from the API response.
+        threshold: Probability difference threshold (default 0.001).
 
     Returns:
-        (p_yes, p_no): probabilities if found among top candidates, else None.
+        list[dict]: List of low-confidence tokens with their details.
     """
-    p_yes = None
-    p_no = None
-    for token_info in choice_logprobs.content:
-        if not token_info.top_logprobs:
+    low_confidence_tokens = []
+
+    for idx, token_info in enumerate(choice_logprobs.content):
+        if not token_info.top_logprobs or len(token_info.top_logprobs) < 2:
             continue
-        for cand in token_info.top_logprobs:
-            tok = (cand.token or "").strip().strip('"').lower()
-            if tok == "yes":
-                p = math.exp(cand.logprob) if cand.logprob is not None else None
-                if p is not None:
-                    p_yes = p if p_yes is None else max(p_yes, p)
-            elif tok == "no":
-                p = math.exp(cand.logprob) if cand.logprob is not None else None
-                if p is not None:
-                    p_no = p if p_no is None else max(p_no, p)
-    return p_yes, p_no
 
+        # Get probabilities for all candidates
+        probs = [math.exp(cand.logprob) for cand in token_info.top_logprobs if cand.logprob is not None]
 
-run_summaries: list[tuple[float | None, float | None]] = []
+        if len(probs) >= 2:
+            top_prob = max(probs)
+            bottom_prob = min(probs)
+            prob_diff = top_prob - bottom_prob
+
+            if prob_diff < threshold:
+                low_confidence_tokens.append(
+                    {
+                        "position": idx,
+                        "token": token_info.token,
+                        "top_prob": top_prob,
+                        "bottom_prob": bottom_prob,
+                        "difference": prob_diff,
+                        "candidates": [(cand.token, math.exp(cand.logprob)) for cand in token_info.top_logprobs],
+                    }
+                )
+
+    return low_confidence_tokens
+
 
 for i in range(10):
     chat = client.chat.completions.create(
@@ -130,12 +144,12 @@ for i in range(10):
         top_logprobs=5,
     )
 
-    # Print the structured output once for visibility
+    # Print the structured output
     print(f"\n--- Run {i+1} ---")
     full_text = chat.choices[0].message.content
     print(full_text)
 
-    # For the first run, also show tokens and candidates to inspect
+    # For the first run, show detailed token analysis
     if i == 0:
         print("\n=== Tokens ===")
         _tokens_seq = chat.choices[0].logprobs.content
@@ -157,10 +171,19 @@ for i in range(10):
             else:
                 print("  (no top_logprobs available)")
 
-    p_yes, p_no = _extract_yes_no_probs(chat.choices[0].logprobs)
-    run_summaries.append((p_yes, p_no))
-    print(f"yes p: {p_yes if p_yes is not None else 'N/A'} | no p: {p_no if p_no is not None else 'N/A'}")
+    # Find low-confidence tokens (where top and bottom differ by < 0.001)
+    low_conf_tokens = find_low_confidence_tokens(chat.choices[0].logprobs, threshold=0.001)
 
-print("\n=== Summary over 5 runs (max prob seen across positions per run) ===")
-for i, (p_yes, p_no) in enumerate(run_summaries, start=1):
-    print(f"Run {i}: yes p={p_yes if p_yes is not None else 'N/A'} | no p={p_no if p_no is not None else 'N/A'}")
+    if low_conf_tokens:
+        print(f"\n⚠️  Found {len(low_conf_tokens)} low-confidence token(s) (diff < 0.001):")
+        for token_data in low_conf_tokens:
+            print(f"  Position {token_data['position']}: '{token_data['token']}'")
+            print(f"    Top prob: {token_data['top_prob']:.6f}, Bottom prob: {token_data['bottom_prob']:.6f}")
+            print(f"    Difference: {token_data['difference']:.6f}")
+            print(f"    Candidates: {token_data['candidates'][:3]}")  # Show top 3
+    else:
+        print(f"\n✓ No low-confidence tokens found (all diffs >= 0.001)")
+
+print("\n=== Analysis Complete ===")
+print("Low-confidence tokens (prob difference < 0.001) indicate positions where")
+print("the model has uncertainty between multiple candidate tokens.")

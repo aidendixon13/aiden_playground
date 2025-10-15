@@ -1,11 +1,17 @@
 [
   {
     "artifact_data": {
-      "id": "90a1d845-2edb-96d2-003e-5fa0331481f7",
+      "id": "5b2a05c0-dc21-e7a6-036b-74003339f404",
       "user_id": "5b98dfee-7a2d-4093-94a0-9669cac5b0cb",
       "artifact_type": "cube_view",
       "artifact_data": {
         "rows": [
+          {
+            "primary_dimension": "UD2",
+            "row_column": [
+              "U2#Global.Tree"
+            ]
+          },
           {
             "primary_dimension": "Account",
             "row_column": [
@@ -40,9 +46,9 @@
         ],
         "columns": [
           {
-            "primary_dimension": "UD2",
+            "primary_dimension": "Time",
             "row_column": [
-              "U2#Global.Tree"
+              "T#2025M8"
             ]
           }
         ],
@@ -69,8 +75,9 @@
         },
         "valid_dims": {
           "overridden_dimensions": [
-            "account",
-            "ud2"
+            "ud2",
+            "time",
+            "account"
           ],
           "scenario_types": [
             "Actual"
@@ -117,11 +124,17 @@
   },
   {
     "artifact_data": {
-      "id": "60eea3b6-2d1e-722c-0433-fd0033148228",
+      "id": "6c7ac929-f1f0-24bc-0295-b3803339f427",
       "user_id": "5b98dfee-7a2d-4093-94a0-9669cac5b0cb",
       "artifact_type": "cube_view",
       "artifact_data": {
         "rows": [
+          {
+            "primary_dimension": "UD2",
+            "row_column": [
+              "U2#REGTop.Tree"
+            ]
+          },
           {
             "primary_dimension": "Account",
             "row_column": [
@@ -156,9 +169,9 @@
         ],
         "columns": [
           {
-            "primary_dimension": "UD2",
+            "primary_dimension": "Time",
             "row_column": [
-              "U2#REGTop.Tree"
+              "T#2025M8"
             ]
           }
         ],
@@ -185,8 +198,9 @@
         },
         "valid_dims": {
           "overridden_dimensions": [
-            "account",
-            "ud2"
+            "ud2",
+            "time",
+            "account"
           ],
           "scenario_types": [
             "Actual"
