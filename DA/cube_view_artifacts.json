@@ -1,8 +1,6 @@
 {
   "cube_view_artifacts": [
     {
-      "id": "c21d976c-62d9-1f08-011b-394033342fc1",
-      "user_id": "e2259ff4-ba06-4641-9b10-c13abe9df85c",
       "artifact_type": "cube_view",
       "artifact_data": {
         "rows": [
@@ -87,40 +85,522 @@
             "ReportingMetrics"
           ]
         },
-        "Members": [
-          {
-            "DimType": "Entity",
-            "MemberName": "NAE",
-            "Expansion": "Base",
-            "Level": 0
-          }
-        ],
-        "analysis_steps": [
-          {
-            "AnalysisType": "Sort",
-            "Target": {
-              "Type": "Members",
-              "Members": [
-                
+        "analysis": [
+            {
+              "analysis_rowcol": [
                 {
-                  "DimType": "Time",
-                  "MemberName": "2024M1",
-                  "Expansion": "",
+                  "DimType": "Entity",
+                  "MemberName": "NAE",
+                  "Expansion": "Base",
                   "Level": 0
                 }
-              ]
-            },
-            "Order": "Descending",
-            "NullHandle": "Last"
+              ],
+            "analysis_steps" : [
+            {
+              "AnalysisType": "Sort",
+              "Target": {
+                "Type": "Members",
+                "Members": [
+                  {
+                    "DimType": "Time",
+                    "MemberName": "2024M1",
+                    "Expansion": "",
+                    "Level": 0
+                  }
+                ]
+              },
+              "Order": "Descending",
+              "NullHandle": "Last"
+            }
+            ]
           }
-        ]
+          ]
       },
-      "class_name": "IArtifact",
-      "_rid": "83x3AOw2tMInAAAAAAAAAA==",
-      "_self": "dbs/83x3AA==/colls/83x3AOw2tMI=/docs/83x3AOw2tMInAAAAAAAAAA==/",
-      "_etag": "\"a404013c-0000-0100-0000-68ded97b0000\"",
-      "_attachments": "attachments/",
-      "_ts": 1759435131
+      "answer" : [
+        {
+          "DimType": "Entity",
+          "MemberName": "C840",
+          "Expansion": "Base",
+          "ParentName": "NAE",
+          "Level": 0,
+          "Values": {
+            "2024M1": 1602904.34574144
+          }
+        },
+        {
+          "DimType": "Entity",
+          "MemberName": "ECA01",
+          "Expansion": "Base",
+          "ParentName": "NAE",
+          "Level": 0,
+          "Values": {
+            "2024M1": 1269107.5099432769
+          }
+        },
+        {
+          "DimType": "Entity",
+          "MemberName": "EBS01",
+          "Expansion": "Base",
+          "ParentName": "NAE",
+          "Level": 0,
+          "Values": {
+            "2024M1": 381204
+          }
+        },
+        {
+          "DimType": "Entity",
+          "MemberName": "EUS01",
+          "Expansion": "Base",
+          "ParentName": "NAE",
+          "Level": 0,
+          "Values": {
+            "2024M1": 176599.62049557304
+          }
+        },
+        {
+          "DimType": "Entity",
+          "MemberName": "EMX30",
+          "Expansion": "Base",
+          "ParentName": "NAE",
+          "Level": 0,
+          "Values": {
+            "2024M1": 0
+          }
+        },
+        {
+          "DimType": "Entity",
+          "MemberName": "EUS90",
+          "Expansion": "Base",
+          "ParentName": "NAE",
+          "Level": 0,
+          "Values": {
+            "2024M1": -176860
+          }
+    }
+      ]
+    },
+    {
+      "artifact_type": "cube_view",
+      "artifact_data": {
+        "rows": [
+          {
+            "primary_dimension": "Entity",
+            "row_column": [
+              "E#NAE.Descendants"
+            ]
+          }
+        ],
+        "columns": [
+          {
+            "primary_dimension": "Time",
+            "row_column": [
+              "T#2024M1"
+            ]
+          }
+        ],
+        "pov": {
+          "cube_name": "Equipment Division",
+          "entity": "GSE",
+          "parent": "",
+          "consolidation": "Local",
+          "scenario": "Actual",
+          "time": "2025M10",
+          "view": "Periodic",
+          "account": "99999",
+          "flow": "FLWTop",
+          "origin": "Top",
+          "ic": "Top",
+          "ud1": "CCTop",
+          "ud2": "REGTop",
+          "ud3": "PRDTop",
+          "ud4": "CSTTop",
+          "ud5": "UD5Top",
+          "ud6": "UD6Top",
+          "ud7": "UD7Top",
+          "ud8": "RPTTop"
+        },
+        "valid_dims": {
+          "overridden_dimensions": [
+            "time",
+            "entity"
+          ],
+          "scenario_types": [
+            "Actual"
+          ],
+          "Entity": [
+            "Equipment"
+          ],
+          "Account": [
+            "Equipment Accounts Actuals"
+          ],
+          "Scenario": [
+            "Scenarios"
+          ],
+          "Flow": [
+            "Detail Flows"
+          ],
+          "UD1": [
+            "Equipment Cost Centers"
+          ],
+          "UD2": [
+            "StateProvince"
+          ],
+          "UD3": [
+            "Equipment Products"
+          ],
+          "UD4": [
+            "Equipment Customer Detail"
+          ],
+          "UD5": [
+            "MainUD5"
+          ],
+          "UD6": [
+            "MainUD6"
+          ],
+          "UD7": [
+            "Detail Data Type"
+          ],
+          "UD8": [
+            "ReportingMetrics"
+          ]
+        },
+        "analysis": [
+            {
+              "analysis_rowcol": [
+                {
+                  "DimType": "Entity",
+                  "MemberName": "NAE",
+                  "Expansion": "Base",
+                  "Level": 0
+                }
+              ],
+            "analysis_steps" : [
+            {
+              "AnalysisType": "Sort",
+              "Target": {
+                "Type": "Members",
+                "Members": [
+                  {
+                    "DimType": "Time",
+                    "MemberName": "2024M1",
+                    "Expansion": "",
+                    "Level": 0
+                  }
+                ]
+              },
+              "Order": "Descending",
+              "NullHandle": "Last"
+            },
+            {
+              "AnalysisType": "Filter",
+              "Target": {
+                "Type": "Members",
+                "Members": [
+                  {
+                    "DimType": "Time",
+                    "MemberName": "2024M1",
+                    "Expansion": "",
+                    "Level": 0
+                  }
+                ]
+              },
+              "FilterType": "TOP",
+              "value": 3,
+              "Include": true,
+              "apply_to_descendants": true
+            }
+            ]
+          }
+          ]
+      },
+      "answer" : [
+        {
+          "DimType": "Entity",
+          "MemberName": "C840",
+          "Expansion": "Base",
+          "ParentName": "NAE",
+          "Level": 0,
+          "Values": {
+            "2024M1": 1602904.34574144
+          }
+        },
+        {
+          "DimType": "Entity",
+          "MemberName": "ECA01",
+          "Expansion": "Base",
+          "ParentName": "NAE",
+          "Level": 0,
+          "Values": {
+            "2024M1": 1269107.5099432769
+          }
+        },
+        {
+          "DimType": "Entity",
+          "MemberName": "EBS01",
+          "Expansion": "Base",
+          "ParentName": "NAE",
+          "Level": 0,
+          "Values": {
+            "2024M1": 381204
+          }
+        }
+      ]
+    },
+    {
+      "artifact_type": "cube_view",
+      "artifact_data": {
+        "rows": [
+          {
+            "primary_dimension": "Account",
+            "row_column": [
+              "A#99999.Base"
+            ]
+          }
+        ],
+        "columns": [
+          {
+            "primary_dimension": "Time",
+            "row_column": [
+              "T#2024M1"
+            ]
+          }
+        ],
+        "pov": {
+          "cube_name": "Equipment Division",
+          "entity": "GSE",
+          "parent": "",
+          "consolidation": "Local",
+          "scenario": "Actual",
+          "time": "2025M10",
+          "view": "Periodic",
+          "account": "99999",
+          "flow": "FLWTop",
+          "origin": "Top",
+          "ic": "Top",
+          "ud1": "CCTop",
+          "ud2": "REGTop",
+          "ud3": "PRDTop",
+          "ud4": "CSTTop",
+          "ud5": "UD5Top",
+          "ud6": "UD6Top",
+          "ud7": "UD7Top",
+          "ud8": "RPTTop"
+        },
+        "valid_dims": {
+          "overridden_dimensions": [
+            "time",
+            "entity"
+          ],
+          "scenario_types": [
+            "Actual"
+          ],
+          "Entity": [
+            "Equipment"
+          ],
+          "Account": [
+            "Equipment Accounts Actuals"
+          ],
+          "Scenario": [
+            "Scenarios"
+          ],
+          "Flow": [
+            "Detail Flows"
+          ],
+          "UD1": [
+            "Equipment Cost Centers"
+          ],
+          "UD2": [
+            "StateProvince"
+          ],
+          "UD3": [
+            "Equipment Products"
+          ],
+          "UD4": [
+            "Equipment Customer Detail"
+          ],
+          "UD5": [
+            "MainUD5"
+          ],
+          "UD6": [
+            "MainUD6"
+          ],
+          "UD7": [
+            "Detail Data Type"
+          ],
+          "UD8": [
+            "ReportingMetrics"
+          ]
+        },
+        "analysis": [
+            {
+              "analysis_rowcol": [
+                {
+                  "DimType": "Account",
+                  "MemberName": "99999",
+                  "Expansion": "Base",
+                  "Level": 0
+                }
+              ],
+            "analysis_steps" : [
+            {
+              "AnalysisType": "Sort",
+              "Target": {
+                "Type": "Members",
+                "Members": [
+                  {
+                    "DimType": "Time",
+                    "MemberName": "2024M1",
+                    "Expansion": "",
+                    "Level": 0
+                  }
+                ]
+              },
+              "Order": "Descending",
+              "NullHandle": "Last"
+            }
+            ]
+          }
+          ]
+      },
+      "answer" : [
+      ]
+    },
+    {
+      "artifact_type": "cube_view",
+      "artifact_data": {
+        "rows": [
+          {
+            "primary_dimension": "Account",
+            "row_column": [
+              "A#99999.Base"
+            ]
+          }
+        ],
+        "columns": [
+          {
+            "primary_dimension": "Time",
+            "row_column": [
+              "T#2024M1"
+            ]
+          }
+        ],
+        "pov": {
+          "cube_name": "Equipment Division",
+          "entity": "GSE",
+          "parent": "",
+          "consolidation": "Local",
+          "scenario": "Actual",
+          "time": "2025M10",
+          "view": "Periodic",
+          "account": "99999",
+          "flow": "FLWTop",
+          "origin": "Top",
+          "ic": "Top",
+          "ud1": "CCTop",
+          "ud2": "REGTop",
+          "ud3": "PRDTop",
+          "ud4": "CSTTop",
+          "ud5": "UD5Top",
+          "ud6": "UD6Top",
+          "ud7": "UD7Top",
+          "ud8": "RPTTop"
+        },
+        "valid_dims": {
+          "overridden_dimensions": [
+            "time",
+            "entity"
+          ],
+          "scenario_types": [
+            "Actual"
+          ],
+          "Entity": [
+            "Equipment"
+          ],
+          "Account": [
+            "Equipment Accounts Actuals"
+          ],
+          "Scenario": [
+            "Scenarios"
+          ],
+          "Flow": [
+            "Detail Flows"
+          ],
+          "UD1": [
+            "Equipment Cost Centers"
+          ],
+          "UD2": [
+            "StateProvince"
+          ],
+          "UD3": [
+            "Equipment Products"
+          ],
+          "UD4": [
+            "Equipment Customer Detail"
+          ],
+          "UD5": [
+            "MainUD5"
+          ],
+          "UD6": [
+            "MainUD6"
+          ],
+          "UD7": [
+            "Detail Data Type"
+          ],
+          "UD8": [
+            "ReportingMetrics"
+          ]
+        },
+        "analysis": [
+            {
+              "analysis_rowcol": [
+                {
+                  "DimType": "Account",
+                  "MemberName": "99999",
+                  "Expansion": "Base",
+                  "Level": 0
+                }
+              ],
+            "analysis_steps" : [
+            {
+              "AnalysisType": "Sort",
+              "Target": {
+                "Type": "Members",
+                "Members": [
+                  {
+                    "DimType": "Time",
+                    "MemberName": "2024M1",
+                    "Expansion": "",
+                    "Level": 0
+                  }
+                ]
+              },
+              "Order": "Descending",
+              "NullHandle": "Last"
+            },
+            {
+              "AnalysisType": "Filter",
+              "Target": {
+                "Type": "Members",
+                "Members": [
+                  {
+                    "DimType": "Time",
+                    "MemberName": "2024M1",
+                    "Expansion": "",
+                    "Level": 0
+                  }
+                ]
+              },
+              "FilterType": "TOP",
+              "value": 3,
+              "Include": true,
+              "apply_to_descendants": true
+            }
+            ]
+          }
+          ]
+      },
+      "answer" : [
+      ]
     }
   ]
 }

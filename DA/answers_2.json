@@ -1,0 +1,1100 @@
+[
+  {
+    "DimType": "Account",
+    "MemberName": "41010",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 32474780.147120003
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "41011",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 14923236.449919999
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "61112",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 10145991.150233999
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "41012",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 8262382.932720001
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "61111",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 5737316.72890274
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "41013",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 5484913.46968
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "51010",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 5388280.863796584
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "52010",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 3708582.269362544
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "53010",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 2540671.92192336
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "63040",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 2192636.833616
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "67010",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 2014999.536034
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "61210",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 1778761.46292575
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "65010",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 1303511.3916
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "63010",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 1054948.002468
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "70020",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 1033546.2705000001
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "61330",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 1008734.68038615
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "61120",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 999414.7059984
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "87210",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 878977.0412138411
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "67020",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 668881.344964
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "70060",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 662480.0519060001
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "61340",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 656949.4650428001
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "61320",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 622419.0402570501
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "63020",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 611687.75748
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "67053",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 600840.7086520001
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "61220",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 590256.9668351001
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "70030",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 570427.1118850001
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "67040",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 565246.649559
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "70090",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 553348.878477
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "65020",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 543129.7465
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "65050",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 541644.20230835
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "63030",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 535228.2429780001
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "61140",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 527252.72056895
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "70040",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 467411.12503800006
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "69020",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 428053.1948060001
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "67030",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 408177.49420200003
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "67051",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 381777.362382
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "70070",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 378186.65880800004
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "61130",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 352062.78670685005
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "70010",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 335841.932089
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "65030",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 332944.647214
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "61240",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 296438.10121355
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "87110",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 293086.576499662
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "62030",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 243421.868114
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "65040",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 221968.425494
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "62020",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 214273.533294
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "69050",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 207962.2014178
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "61160",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 191895.6393181
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "66010",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 189873.52880000003
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "69120",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 188878.50467400003
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "64060",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 180380.49008800002
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "66520",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 175877.382478
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "67510",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 162531.61483000003
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "67070",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 149774.115028
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "61280",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 144942.099804
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "80200",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 131660.00000000003
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "66510",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 131577.30623100002
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "61310",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 124780.61094410002
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "61230",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 101227.09960860001
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "67052",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 96328.66789000001
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "66020",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 95493.38091400001
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "67530",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 88620.5734495
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "62010",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 84518.686444
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "66030",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 74502.6393388
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "61170",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 64725.1676447
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "64030",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 63573.232304000005
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "69040",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 54437.7077195
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "70080",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 50969.152022999995
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "66040",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 49496.1765379
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "67520",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 45128.0571505
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "69030",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 43823.4952532
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "61150",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 41451.306197
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "67540",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 37890.946700500004
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "69080",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 27649.477206800002
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "64040",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 25559.583806
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "64050",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 24274.137981
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "69060",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 24230.3226644
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "69110",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 23627.9125386
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "61260",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 23620.8914854
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "64070",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 22976.403166000004
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "61270",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 22837.0093587
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "67060",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 18835.62054
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "66530",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 18651.937871000002
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "69070",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 10724.2571656
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "61250",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 10362.22407335
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "64010",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 10339.444763000001
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "69090",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 10103.4812504
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "66540",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 4710.142498
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "64020",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 2172.5189859999996
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "41014",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 0
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "54010",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 0
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "59010",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": -1196360.0876124878
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "49110",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": -1271993.3518400001
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "49210",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": -2869862.32112
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "42000",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {}
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "48000",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {}
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "68705",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {}
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "68710",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {}
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "68790",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {}
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "69500",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {}
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "69010",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {}
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "80010",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {}
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "80020",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {}
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "80030",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {}
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "80040",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {}
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "80050",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {}
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "80060",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {}
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "80100",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {}
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "80120",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {}
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "80220",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {}
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "87120",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {}
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "87220",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {}
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "88010",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {}
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "88020",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {}
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "88030",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {}
+  }
+]

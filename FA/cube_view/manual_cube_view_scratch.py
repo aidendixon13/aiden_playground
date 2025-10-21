@@ -7,53 +7,27 @@ import httpx
 from langsmith import trace, tracing_context
 from pydantic import BaseModel
 
-from wernicke.agents.rubix.cube_view.cube_view_orchestrator.cube_view_orchestrator import (
-    CubeViewOrchestrator,
-)
-from wernicke.agents.rubix.cube_view.cube_view_orchestrator.state import (
-    CubeViewOrchestratorState,
-)
+from wernicke.agents.rubix.cube_view.cube_view_orchestrator.cube_view_orchestrator import CubeViewOrchestrator
+from wernicke.agents.rubix.cube_view.cube_view_orchestrator.state import CubeViewOrchestratorState
 from wernicke.agents.rubix.cube_view.models import TimeScope
 from wernicke.config.env_config.constants import EnvVar
-from wernicke.engines.llm.auxillary.artifacts.adapters.uow.cosmos import (
-    ArtifactCosmosUnitOfWork,
-)
-from wernicke.engines.llm.auxillary.callbacks.streaming_callback import (
-    AsyncStreamingCallbackHandler,
-)
+from wernicke.engines.llm.auxillary.artifacts.adapters.uow.cosmos import ArtifactCosmosUnitOfWork
+from wernicke.engines.llm.auxillary.callbacks.streaming_callback import AsyncStreamingCallbackHandler
 from wernicke.engines.llm.hil_adapter.base import HilInputFormat
 from wernicke.engines.llm.llm_orchestrators.graph_llm_orchestrators.graph_checkpointers.table_storage_checkpointer import (
     AzureTableStorageCheckpointer,
 )
-from wernicke.engines.llm.llm_orchestrators.graph_llm_orchestrators.models import (
-    BaseGraphState,
-    GraphInputModel,
-    HilResponseModel,
-)
+from wernicke.engines.llm.llm_orchestrators.graph_llm_orchestrators.models import BaseGraphState, GraphInputModel, HilResponseModel
 from wernicke.engines.llm.models import ResponseType
-from wernicke.engines.processing.onestream_metadata.dim_member_groupings.adapters.uow.cosmos import (
-    DimMemberGroupingCosmosUnitOfWork,
-)
-from wernicke.engines.processing.settings.adapters.uow.company_settings.cosmos import (
-    CompanySettingsCosmosUnitOfWork,
-)
-from wernicke.engines.processing.settings.adapters.uow.persona_settings.cosmos import (
-    PersonaSettingsCosmosUnitOfWork,
-)
-from wernicke.engines.processing.settings.adapters.uow.ud_types_setting.cosmos import (
-    UDSettingsCosmosUnitOfWork,
-)
-from wernicke.engines.processing.settings.adapters.uow.user_settings.cosmos import (
-    UserSettingsCosmosUnitOfWork,
-)
+from wernicke.engines.processing.onestream_metadata.dim_member_groupings.adapters.uow.cosmos import DimMemberGroupingCosmosUnitOfWork
+from wernicke.engines.processing.settings.adapters.uow.company_settings.cosmos import CompanySettingsCosmosUnitOfWork
+from wernicke.engines.processing.settings.adapters.uow.persona_settings.cosmos import PersonaSettingsCosmosUnitOfWork
+from wernicke.engines.processing.settings.adapters.uow.ud_types_setting.cosmos import UDSettingsCosmosUnitOfWork
+from wernicke.engines.processing.settings.adapters.uow.user_settings.cosmos import UserSettingsCosmosUnitOfWork
 from wernicke.engines.retrieval.index_management.models import IndexService
 from wernicke.managers.cosmos_database.azure_cosmos_manager import CosmosDatabaseManager
 from wernicke.shared.guid import guid_to_str, new_guid, str_to_guid
-
-# Removed unused emulator imports for direct orchestrator interaction
-# from wernicke.tests.mocks.onestream_metadata.expansion_count.expansion_count import (
-#     MockExpansionCountService,
-# )
+from wernicke.tests.mocks.onestream_metadata.expansion_count.expansion_count import MockExpansionCountService
 from wernicke.tests.shared_utils.test_session import create_test_user_session
 
 
@@ -226,7 +200,7 @@ async def execute_orchestrator():
 
         # Prepare graph state
         graph_state = CubeViewOrchestratorState(
-            user_input=question.question,
+            user_input="show me the top 5 with the highest revenue children under NAE entity in Jan 2024",
             ud_types=ud_types,
             time_scope=TimeScope.NONE,
             cube_name="Equipment Division",  # Assuming the user selects this cube
@@ -337,10 +311,10 @@ if __name__ == "__main__":
     from unittest.mock import patch
 
     # Patch ExpansionCountService with our mock
-    # with patch(
-    #     "wernicke.agents.rubix.cube_view.subgraph_orchestrators.cube_view_builder_orchestrator.state.ExpansionCountService", MockExpansionCountService
-    # ):
-    result, response_type = asyncio.run(execute_orchestrator())
+    with patch(
+        "wernicke.agents.rubix.cube_view.subgraph_orchestrators.cube_view_builder_orchestrator.state.ExpansionCountService", MockExpansionCountService
+    ):
+        result, response_type = asyncio.run(execute_orchestrator())
     print("\n📋 Final Results:")
     print(f"Result: {result}")
     print(f"Response Type: {response_type}")

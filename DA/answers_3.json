@@ -1,0 +1,32 @@
+[
+  {
+    "DimType": "Account",
+    "MemberName": "41010",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 32474780.147120003
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "41011",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 14923236.449919999
+    }
+  },
+  {
+    "DimType": "Account",
+    "MemberName": "61112",
+    "Expansion": "Base",
+    "ParentName": "99999",
+    "Level": 0,
+    "Values": {
+      "2024M1": 10145991.150233999
+    }
+  }
+]
